@@ -5,9 +5,7 @@ import com.zenith.livinghistory.api.zenithlivinghistoryapi.dto.Annotation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,21 +16,6 @@ public class AnnotationController {
     public AnnotationController(AnnotationRepository annotationRepository) {
         this.annotationRepository = annotationRepository;
     }
-
-//    @RequestMapping(method = RequestMethod.POST, value = "/")
-//    public ResponseEntity<Void> create(@RequestBody Annotation annotation) {
-//        Integer index = this.annotations.size();
-//        annotation.setId("http://localhost:8080/api/v1/annotations/" + ++index);
-//
-//        annotations.add(annotation);
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add("Allow", "PUT,GET,OPTIONS,HEAD,DELETE,PATCH");
-//        headers.add("Location", "http://example.org/annotations/anno1");
-//        headers.add("Content-Type", "application/ld+json; profile=\"http://www.w3.org/ns/anno.jsonld\"");
-//
-//        return new ResponseEntity(annotation, headers, HttpStatus.CREATED);
-//    }
 
     @RequestMapping(method = RequestMethod.POST, value = "/")
     public ResponseEntity<Annotation> create(@RequestBody @Valid Annotation annotation) {
