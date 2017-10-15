@@ -1,16 +1,16 @@
 package com.zenith.livinghistory.api.zenithlivinghistoryapi.request;
 
-public class Annotation {
+public class AnnotationRequest {
     private String id;
     private String context;
     private String type;
-    private AnnotationBody body;
+    private AnnotationBodyRequest body;
 
-    public AnnotationBody getBody() {
+    public AnnotationBodyRequest getBody() {
         return body;
     }
 
-    public void setBody(AnnotationBody body) {
+    public void setBody(AnnotationBodyRequest body) {
         this.body = body;
     }
 

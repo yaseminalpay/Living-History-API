@@ -1,6 +1,6 @@
 package com.zenith.livinghistory.api.zenithlivinghistoryapi.request;
 
-public class AnnotationBody {
+public class AnnotationBodyRequest {
     private String type;
     private String value;
 
