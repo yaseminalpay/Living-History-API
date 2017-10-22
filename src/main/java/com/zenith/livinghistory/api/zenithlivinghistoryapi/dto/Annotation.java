@@ -1,11 +1,14 @@
-package com.zenith.livinghistory.api.zenithlivinghistoryapi.request;
+package com.zenith.livinghistory.api.zenithlivinghistoryapi.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import org.joda.time.DateTime;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
+@Document(collection = "Annotations")
 public class Annotation implements Serializable {
 
     /*
@@ -35,13 +38,28 @@ public class Annotation implements Serializable {
     *
     * */
 
+    public Annotation() {
+    }
+
+    public Annotation(String context, String type, String creator, DateTime created, DateTime modified, AnnotationBody body, AnnotationTarget target) {
+        this.context = context;
+        this.type = type;
+        this.creator = creator;
+        this.created = created;
+        this.modified = modified;
+        this.body = body;
+        this.target = target;
+    }
+
     @JsonProperty("@context")
     private String context;
 
+    @Id
     private String id;
 
     private String type;
 
+    @Indexed
     private String creator;
 
     private DateTime created;
@@ -50,6 +68,7 @@ public class Annotation implements Serializable {
 
     private AnnotationBody body;
 
+    @Indexed
     private AnnotationTarget target;
 
     public String getCreator() {
