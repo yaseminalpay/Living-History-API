@@ -25,5 +25,6 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'com.github.jsonld-java', name: 'jsonld-java', version: '0.11.1'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
