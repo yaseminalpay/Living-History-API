@@ -1,4 +1,4 @@
-package com.zenith.livinghistory.api.zenithlivinghistoryapi.request;
+package com.zenith.livinghistory.api.zenithlivinghistoryapi.dto;
 
 import org.joda.time.DateTime;
 
@@ -19,6 +19,18 @@ public class AnnotationBody implements Serializable {
     * }
     *
     * */
+
+    public AnnotationBody() {
+    }
+
+    public AnnotationBody(String type, String value, String format, String language, String creator, DateTime created) {
+        this.type = type;
+        this.value = value;
+        this.format = format;
+        this.language = language;
+        this.creator = creator;
+        this.created = created;
+    }
 
     private String type;
 
