@@ -1,8 +1,52 @@
 package com.zenith.livinghistory.api.zenithlivinghistoryapi.request;
 
-public class AnnotationBody {
+import org.joda.time.DateTime;
+
+import java.io.Serializable;
+
+public class AnnotationBody implements Serializable {
+
+    /*
+    * Example:
+    *
+    * "body": {
+    *   "type" : "TextualBody",
+    *   "value" : "<p>Paragraf!</p>",
+    *   "format" : "text/html",
+    *   "language" : "tr",
+    *   "creator": "http://example.net/user2",
+    *   "created": "2014-06-02T17:00:00Z"
+    * }
+    *
+    * */
+
     private String type;
+
     private String value;
+
+    private String format;
+
+    private String language;
+
+    private String creator;
+
+    private DateTime created;
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public DateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(DateTime created) {
+        this.created = created;
+    }
 
     public String getType() {
         return type;
@@ -18,6 +62,22 @@ public class AnnotationBody {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 }
 
