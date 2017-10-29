@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
     @RequestMapping("/")
     public String home() {
-        return "This is Living-History Api";
+        return "This is a Living-History Api container running on Google Cloud";
     }
 }
