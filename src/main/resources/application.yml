@@ -1,1 +1,1 @@
-livinghistory:  auth:    secret: c7,H!wWHr7+Yc~;p    scheme: LHS
+zenith.security.jwt:  tokenExpirationTime: 15  refreshTokenExpTime: 60  tokenIssuer: ubormetanga  tokenSigningKey: xm8EV6Hy5RMFK4EEACIDAwQus
