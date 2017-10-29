@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/cloud-builders/java/gradle'
+  args: ['build', 'bootRepackage']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/project-574-183719/$REPO_NAME:$COMMIT_SHA', '.']
+images: ['gcr.io/project-574-183719/$REPO_NAME:$COMMIT_SHA']
