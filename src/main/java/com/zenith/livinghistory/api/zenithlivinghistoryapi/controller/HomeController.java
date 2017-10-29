@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HomeController {
-
     @RequestMapping("/")
     public String home() {
-        return "This is Zenith Web Annotations Api";
+        return "This is Living-History Api";
     }
-
 }
