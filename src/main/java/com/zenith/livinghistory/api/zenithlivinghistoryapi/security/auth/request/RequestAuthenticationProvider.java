@@ -45,7 +45,7 @@ public class RequestAuthenticationProvider implements AuthenticationProvider {
     //region Public Methods
 
     @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+    public Authentication authenticate(Authentication authentication) throws UsernameNotFoundException, BadCredentialsException {
 
         Assert.notNull(authentication, "No authentication data provided");
 

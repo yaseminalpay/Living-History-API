@@ -1,4 +1,4 @@
-package com.zenith.livinghistory.api.zenithlivinghistoryapi;
+package com.zenith.livinghistory.api.zenithlivinghistoryapi.security.filters;
 
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;

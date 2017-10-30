@@ -31,7 +31,7 @@ public class LoginProcessingFilter extends AbstractAuthenticationProcessingFilte
 
     private final AuthenticationSuccessHandler successHandler;
 
-    private final AuthenticationFailureHandler failureHandler;
+    private final AwareAuthenticationFailureHandler failureHandler;
 
     private final ObjectMapper objectMapper;
 
@@ -48,7 +48,7 @@ public class LoginProcessingFilter extends AbstractAuthenticationProcessingFilte
      */
     public LoginProcessingFilter(String defaultProcessUrl,
                                  AuthenticationSuccessHandler successHandler,
-                                 AuthenticationFailureHandler failureHandler,
+                                 AwareAuthenticationFailureHandler failureHandler,
                                  ObjectMapper mapper) {
 
         super(defaultProcessUrl);
@@ -129,5 +129,8 @@ public class LoginProcessingFilter extends AbstractAuthenticationProcessingFilte
         SecurityContextHolder.clearContext();
         failureHandler.onAuthenticationFailure(request, response, failed);
     }
+
+
+
     //endregion
 }
