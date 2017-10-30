@@ -1,6 +1,6 @@
 package com.zenith.livinghistory.api.zenithlivinghistoryapi.dto;
 
 public interface AnnotationType {
-    String TEXT = "TextualBody";
-    String IMAGE = "Image";
+    public static String TEXT = "TextualBody";
+    public static String IMAGE = "Image";
 }
