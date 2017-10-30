@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 
@@ -61,7 +62,17 @@ public class AwareAuthenticationFailureHandler implements AuthenticationFailureH
         response.setStatus(HttpStatus.UNAUTHORIZED.value());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 
-        if (e instanceof BadCredentialsException) {
+        if (e instanceof UsernameNotFoundException) {
+            mapper.writeValue(
+                    response.getWriter(),
+                    ErrorResponse.of(
+                            e.getMessage(),
+                            ErrorCodes.AUTHENTICATION,
+                            HttpStatus.UNAUTHORIZED
+                    )
+            );
+
+        } else if (e instanceof BadCredentialsException) {
 
             mapper.writeValue(
                     response.getWriter(),
