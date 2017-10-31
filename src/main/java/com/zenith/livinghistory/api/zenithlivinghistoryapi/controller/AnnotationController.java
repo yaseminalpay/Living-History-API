@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/annotations/")
 public class AnnotationController {
+
     private AnnotationRepository annotationRepository;
 
     public AnnotationController(AnnotationRepository annotationRepository) {

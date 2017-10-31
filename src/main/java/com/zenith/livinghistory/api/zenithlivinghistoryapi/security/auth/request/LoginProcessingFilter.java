@@ -130,7 +130,5 @@ public class LoginProcessingFilter extends AbstractAuthenticationProcessingFilte
         failureHandler.onAuthenticationFailure(request, response, failed);
     }
 
-
-
     //endregion
 }

@@ -3,6 +3,7 @@ package com.zenith.livinghistory.api.zenithlivinghistoryapi.security.config;
 import java.util.Arrays;
 import java.util.List;
 
+
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.security.auth.request.AwareAuthenticationFailureHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.security.filters.CustomCorsFilter;
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.security.RestAuthenticationEntryPoint;
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.security.auth.request.RequestAuthenticationProvider;
@@ -45,6 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private AuthenticationSuccessHandler successHandler;
 
     @Autowired
+
     private AwareAuthenticationFailureHandler failureHandler;
 
     @Autowired
