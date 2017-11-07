@@ -2,6 +2,7 @@ package com.zenith.livinghistory.api.zenithlivinghistoryapi.controller;
 
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.data.repository.AnnotationRepository;
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.dto.Annotation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +13,8 @@ import java.util.List;
 @RequestMapping("api/v1/annotations/")
 public class AnnotationController {
 
+    @Autowired
     private AnnotationRepository annotationRepository;
-
-    public AnnotationController(AnnotationRepository annotationRepository) {
-        this.annotationRepository = annotationRepository;
-    }
 
     @RequestMapping(method = RequestMethod.POST, value = "/")
     public ResponseEntity<Annotation> create(@RequestBody @Valid Annotation annotation) {

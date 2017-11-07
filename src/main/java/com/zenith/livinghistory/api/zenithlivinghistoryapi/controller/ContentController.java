@@ -2,6 +2,7 @@ package com.zenith.livinghistory.api.zenithlivinghistoryapi.controller;
 
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.data.repository.ContentRepository;
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.dto.Content;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/contents/")
 public class ContentController {
-    private ContentRepository contentRepository;
 
-    public ContentController(ContentRepository contentRepository) {
-        this.contentRepository = contentRepository;
-    }
+    @Autowired
+    private ContentRepository contentRepository;
 
 //    @RequestMapping(method = RequestMethod.POST, value = "/")
 //    public ResponseEntity<Void> create(@RequestBody Content content) {

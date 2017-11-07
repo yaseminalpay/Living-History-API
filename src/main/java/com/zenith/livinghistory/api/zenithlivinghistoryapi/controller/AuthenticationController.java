@@ -3,6 +3,7 @@ package com.zenith.livinghistory.api.zenithlivinghistoryapi.controller;
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.dto.User;
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.dto.request.SignUpRequest;
 import com.zenith.livinghistory.api.zenithlivinghistoryapi.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -14,12 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1/auth/")
 public class AuthenticationController {
+
+    @Autowired
     private UserService userService;
 
-
-    public AuthenticationController(UserService userService) {
-        this.userService = userService;
-    }
 
     @RequestMapping(method = RequestMethod.POST, value = "/signup", produces = "application/json")
     public ResponseEntity<String> signup(@RequestBody SignUpRequest request) {
